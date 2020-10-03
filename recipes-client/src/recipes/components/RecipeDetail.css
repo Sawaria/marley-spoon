@@ -1,0 +1,24 @@
+.detail {
+  border: 3px solid #000000;
+  margin: auto;
+  width: 80%;
+}
+
+.image img {
+  max-width: 500px;
+}
+
+.link a {
+  color: #2196F3;
+  font-size: 1rem;
+}
+
+.desciption {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.wrapper div {
+  padding-bottom: 1rem;
+}
