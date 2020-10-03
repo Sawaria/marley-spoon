@@ -11,13 +11,3 @@ const fetchRecipesList = () => {
 }
 
 export { fetchRecipeDetail, fetchRecipesList }
-
-// export const getRecipe = (id) => httpClient.get(`/recipes/${id}`)
-//   .then((response) => mapRecipe(response.data))
-//   .catch((error) => {
-//     if (error.response && error.response.status === 404) {
-//       return null
-//     }
-
-//     throw error
-//   })

@@ -9,32 +9,35 @@ const RecipeList = props => {
 
   return (
     <Loading loading={isLoading}>
-      <div className='list'>  
-        {recipes.map(recipe => 
-          <div className='recipe' key={recipe.id}>
+      <div className="list">
+        {recipes.map(recipe => (
+          <div className="recipe" key={recipe.id}>
             <Link to={`/recipes/${recipe.id}`}>
               <img src={recipe.photo_url} alt={recipe.id} />
-              <div className='title'>{recipe.title}</div>
+              <div className="title">{recipe.title}</div>
             </Link>
-          </div>)}
+          </div>
+        ))}
       </div>
     </Loading>
   )
-};
+}
 
 RecipeList.defaultProps = {
-  recipes: []
+  recipes: [],
 }
 
 RecipeList.propTypes = {
-  recipes: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    photo_url: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    chef_name: PropTypes.string,
-    tag_names: PropTypes.arrayOf(PropTypes.string)
-  }))
+  recipes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      photo_url: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      chef_name: PropTypes.string,
+      tag_names: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
 }
 
-export default RecipeList;
+export default RecipeList

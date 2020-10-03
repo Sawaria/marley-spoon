@@ -8,30 +8,51 @@ import './RecipeDetail.css'
 const RecipeDetail = props => {
   const { recipe, isLoading } = props
 
+  const tags = () => {
+    if (!recipe.tag_names || recipe.tag_names.length === 0) {
+      return <></>
+    }
+
+    return (
+      <div className="desciption">
+        {(recipe.tag_names || []).map(tag => (
+          <span>#{tag} &nbsp;</span>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <Loading loading={isLoading}>
-      <div className='wrapper'>
-        <div className='link'>
-          {recipe.title && <Link to='/'>Go to Recipes list page</Link>}
-        </div>
-        <div className='detail'>
-          <h4>{recipe.title}</h4>
-          {recipe.chef_name && <div class='chef'>Recipe by: {recipe.chef_name}</div>}
-          <div className='image' >
+      <div className="wrapper">
+        <div className="title">{recipe.title}</div>
+        <div className="detail">
+          <div className="image">
             <img src={recipe.photo_url} alt={recipe.id} />
           </div>
-          {recipe.tag_names && (recipe.tag_names || []).map(tag => <span>#{tag} </span>)}
-          <div className='desciption'>
-            <ReactMarkdown source={recipe.description} />
+          <div className="line" />
+          <div>
+            {recipe.chef_name && (
+              <div className="desciption">
+                Recipe by: <b>{recipe.chef_name}</b>
+              </div>
+            )}
+            <div className="desciption">
+              <ReactMarkdown source={recipe.description} />
+            </div>
+            {tags()}
           </div>
         </div>
       </div>
+      <div className="link">
+        {recipe.title && <Link to="/">Go to Recipes list page</Link>}
+      </div>
     </Loading>
   )
-};
+}
 
 RecipeDetail.defaultProps = {
-  recipe: {}
+  recipe: {},
 }
 
 RecipeDetail.propTypes = {
@@ -41,8 +62,8 @@ RecipeDetail.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     chef_name: PropTypes.string,
-    tag_names: PropTypes.arrayOf(PropTypes.string)
-  })
+    tag_names: PropTypes.arrayOf(PropTypes.string),
+  }),
 }
 
-export default RecipeDetail;
+export default RecipeDetail

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import loader from '../../loader.svg';
+import loader from '../../loader.svg'
 import './Loading.css'
 
 const Loading = props => {
@@ -11,18 +11,19 @@ const Loading = props => {
   return (
     <div>
       <div>Loading</div>
-      <img src={loader} className='loader' alt='loader' />
-    </div>)
+      <img src={loader} className="loader" alt="loader" />
+    </div>
+  )
 }
 
 Loading.defaultProps = {
   loading: true,
-  children: []
+  children: [],
 }
 
 Loading.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  children: PropTypes.node
+  loading: PropTypes.bool,
+  children: PropTypes.node,
 }
 
-export default Loading;
+export default Loading

@@ -1,4 +1,4 @@
-.detail {
+.wrapper {
   border: 3px solid #000000;
   margin: auto;
   width: 80%;
@@ -6,6 +6,17 @@
 
 .image img {
   max-width: 500px;
+  margin: 20px 40px;
+}
+
+.chef {
+  text-align: left;
+}
+
+.title {
+  margin: 20px 20px;
+  font-weight: bold;
+  color: #2196F3;
 }
 
 .link a {
@@ -13,12 +24,26 @@
   font-size: 1rem;
 }
 
+.link {
+  margin-bottom: 100px;
+}
+
 .desciption {
   margin: auto;
+  text-align: left;
+  font-size: 1.25rem;
   margin-bottom: 20px;
   width: 80%;
 }
 
+.line {
+  border-left: 2px solid #000000;
+}
+
 .wrapper div {
   padding-bottom: 1rem;
+}
+
+.detail {
+  display: flex;
 }

@@ -7,15 +7,13 @@ const RecipeListContainer = () => {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    fetchRecipesList()
-      .then(res => {
-        setRecipes(res.data)
-        setIsLoading(false)
-      })
-      .catch(() => console.log('ccccccc'));
+    fetchRecipesList().then(res => {
+      setRecipes(res.data)
+      setIsLoading(false)
+    })
   }, [])
 
-  return <RecipeList recipes={recipes} isLoading={isLoading}></RecipeList>
+  return <RecipeList recipes={recipes} isLoading={isLoading} />
 }
 
 export default RecipeListContainer

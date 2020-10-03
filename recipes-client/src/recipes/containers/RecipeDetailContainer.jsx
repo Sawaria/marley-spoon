@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import RecipeDetail from '../components/RecipeDetail'
 import { useParams } from 'react-router-dom'
+import RecipeDetail from '../components/RecipeDetail'
 import { fetchRecipeDetail } from '../services/RecipesService'
 
 const RecipeDetailContainer = () => {
@@ -9,15 +9,13 @@ const RecipeDetailContainer = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    fetchRecipeDetail(id)
-      .then(res => {
-        setRecipe(res.data)
-        setIsLoading(false)
-      })
-      .catch((e) => console.log(e));
+    fetchRecipeDetail(id).then(res => {
+      setRecipe(res.data)
+      setIsLoading(false)
+    })
   }, [id])
 
-  return <RecipeDetail recipe={recipe} isLoading={isLoading}></RecipeDetail>
+  return <RecipeDetail recipe={recipe} isLoading={isLoading} />
 }
 
 export default RecipeDetailContainer

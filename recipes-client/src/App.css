@@ -10,9 +10,13 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #d9d9d9;
 }
 
 a {
   color: #2196F3;
+}
+
+.App-header h4 {
+  color: #ffffff;
 }
