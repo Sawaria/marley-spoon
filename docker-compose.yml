@@ -1,0 +1,22 @@
+version: '3'
+services:
+  recipes-client:
+    container_name: recipes-client
+    stdin_open: true
+    build:
+      context: ./recipes-client
+    environment:
+      RECIPE_SERVER_BASE_URL: http://localhost:4000/api/v1
+    ports:
+      - 3000:3000
+
+  recipes-server:
+    container_name: recipes-server
+    build:
+      context: ./recipes-server
+    environment:
+      ACCESS_TOKEN: 7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c
+      SPACE_ID: kk2bw5ojx476
+      ENVIRONMENT_ID: master
+    ports:
+      - 4000:3000
