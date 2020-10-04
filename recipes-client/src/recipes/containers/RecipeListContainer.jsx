@@ -8,7 +8,7 @@ const RecipeListContainer = () => {
 
   useEffect(() => {
     fetchRecipesList().then(res => {
-      setRecipes(res.data)
+      setRecipes(res)
       setIsLoading(false)
     })
   }, [])

@@ -13,7 +13,7 @@ const RecipeList = props => {
         {recipes.map(recipe => (
           <div className="recipe" key={recipe.id}>
             <Link to={`/recipes/${recipe.id}`}>
-              <img src={recipe.photo_url} alt={recipe.id} />
+              <img src={recipe.photoUrl} alt={recipe.id} />
               <div className="title">{recipe.title}</div>
             </Link>
           </div>
@@ -31,11 +31,8 @@ RecipeList.propTypes = {
   recipes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      photo_url: PropTypes.string,
+      photoUrl: PropTypes.string,
       title: PropTypes.string,
-      description: PropTypes.string,
-      chef_name: PropTypes.string,
-      tag_names: PropTypes.arrayOf(PropTypes.string),
     })
   ),
 }

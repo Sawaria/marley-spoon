@@ -9,13 +9,13 @@ const RecipeDetail = props => {
   const { recipe, isLoading } = props
 
   const tags = () => {
-    if (!recipe.tag_names || recipe.tag_names.length === 0) {
+    if (!recipe.tagNames || recipe.tagNames.length === 0) {
       return <></>
     }
 
     return (
       <div className="desciption">
-        {(recipe.tag_names || []).map(tag => (
+        {(recipe.tagNames || []).map(tag => (
           <span>#{tag} &nbsp;</span>
         ))}
       </div>
@@ -28,13 +28,13 @@ const RecipeDetail = props => {
         <div className="title">{recipe.title}</div>
         <div className="detail">
           <div className="image">
-            <img src={recipe.photo_url} alt={recipe.id} />
+            <img src={recipe.photoUrl} alt={recipe.id} />
           </div>
           <div className="line" />
           <div className="right-flex">
-            {recipe.chef_name && (
+            {recipe.chefName && (
               <div className="desciption">
-                Recipe by: <b>{recipe.chef_name}</b>
+                Recipe by: <b>{recipe.chefName}</b>
               </div>
             )}
             <div className="desciption">
@@ -58,11 +58,11 @@ RecipeDetail.defaultProps = {
 RecipeDetail.propTypes = {
   recipe: PropTypes.shape({
     id: PropTypes.string,
-    photo_url: PropTypes.string,
+    photoUrl: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    chef_name: PropTypes.string,
-    tag_names: PropTypes.arrayOf(PropTypes.string),
+    chefName: PropTypes.string,
+    tagNames: PropTypes.arrayOf(PropTypes.string),
   }),
 }
 

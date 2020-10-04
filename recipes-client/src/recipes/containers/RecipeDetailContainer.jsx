@@ -10,7 +10,7 @@ const RecipeDetailContainer = () => {
 
   useEffect(() => {
     fetchRecipeDetail(id).then(res => {
-      setRecipe(res.data)
+      setRecipe(res)
       setIsLoading(false)
     })
   }, [id])
