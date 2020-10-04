@@ -31,7 +31,7 @@ const RecipeDetail = props => {
             <img src={recipe.photo_url} alt={recipe.id} />
           </div>
           <div className="line" />
-          <div>
+          <div className="right-flex">
             {recipe.chef_name && (
               <div className="desciption">
                 Recipe by: <b>{recipe.chef_name}</b>

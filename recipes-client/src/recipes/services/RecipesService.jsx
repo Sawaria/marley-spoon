@@ -1,4 +1,4 @@
-import axios from '../../base-axios'
+import axios from '../../baseAxios'
 
 const fetchRecipeDetail = id => {
   const { get } = axios
